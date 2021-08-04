@@ -19,15 +19,24 @@ use File;
 class HomeController extends Controller
 {
     public function index(){
-        $data['logo'] = logo::orderBy('id', 'asc')->get();
-        $data['sliders'] = Slider::orderBy('id', 'desc')->get();
-        $data['aboutus'] = AboutUs::orderBy('id', 'desc')->get();
-        $data['nonprofit'] = NonProft::orderBy('id', 'desc')->get();        
-        $data['bod'] = Bod::orderBy('id', 'desc')->get();
-        $data['boa'] = Boa::orderBy('id', 'desc')->get();
-        $data['address'] = Address::orderBy('id', 'desc')->get();
-        $data['msg'] = Messege::orderBy('id', 'desc')->get();
-        $data['subscribe'] = Subscribe::orderBy('id', 'desc')->get();
-        return view('index', $data);
+        return view('pages.index');
+    }
+    public function contact(){
+        return view('pages.contact');
+    }
+    public function about(){
+        return view('pages.about');
+    }
+    public function service(){
+        return view('pages.services');
+    }
+    public function pricing(){
+        return view('pages.pricing');
+    }
+    public function software(){
+        return view('pages.software');
+    }
+    public function hardware(){
+        return view('pages.hardware');
     }
 }
